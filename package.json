@@ -1,0 +1,17 @@
+{
+  "name": "grunt-test-4",
+  "version": "0.0.0",
+  "description": "test requirejs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "~0.4.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-requirejs": "~0.4.1"
+  }
+}
