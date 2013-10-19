@@ -85,12 +85,15 @@ module.exports = function(grunt){
   });
 
   grunt.registerTask('updateConfig', function(config) {
-    grunt.config('requirejs.compile.options.baseUrl', config.baseUrl);
-    grunt.config('requirejs.compile.options.name', config.name);
-    grunt.config('requirejs.compile.options.out', config.out);
-    grunt.config('requirejs.compile.options.paths', config.paths);
-    grunt.config('requirejs.compile.options.shim', config.shim);
-    console.log(grunt.config('requirejs.compile.options'));
+    // console.log(config.name);
+    config =  eval("("+config+")");
+    console.log(config.name);
+    // grunt.config('requirejs.compile.options.baseUrl', config.baseUrl);
+    // grunt.config('requirejs.compile.options.name', config.name);
+    // grunt.config('requirejs.compile.options.out', config.out);
+    // grunt.config('requirejs.compile.options.paths', config.paths);
+    // grunt.config('requirejs.compile.options.shim', config.shim);
+    // console.log(grunt.config('requirejs.compile.options'));
   });
 
   
@@ -142,7 +145,7 @@ module.exports = function(grunt){
     configs.forEach(function(config) {
       grunt.log.writeln("build: " + config.name);
       // 上面這邊有值，但是 pass 到 updateConfig 的時候 config -> null
-      grunt.task.run('updateConfig:'+ config);
+      grunt.task.run('updateConfig:'+ "{'name':'aaa'}");
     });
   });
   
